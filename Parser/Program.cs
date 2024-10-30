@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.OpenApi.Models;
 using Parser.Context;
+using Parser.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,11 +11,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Parser", Version = "v1" });
+});
 
 
 builder.Services.AddDbContext<EFDbContext>(options =>
      options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
+
+builder.Services.AddTransient<ParserService>();
 
 var app = builder.Build();
 

@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Parser.Services;
+using System.Web.Http;
 
 namespace Parser.Controllers
 {
-    public class ParserController : Controller
+    public class ParserController : ApiController
     {
-        public IActionResult Index()
+        private ParserService parseService;
+        public ParserController(ParserService parseService)
         {
-            return View();
+            this.parseService = parseService;
+        }
+        public ParserController() {
+            }
+
+        public async Task<string> TestParse()
+        {
+            await parseService.StartKZParse();
+            return "ok";
         }
     }
 }
