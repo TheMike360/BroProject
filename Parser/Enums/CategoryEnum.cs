@@ -2,6 +2,7 @@
 {
     public enum CategoryEnum
     {
+        Other,
         Sport,
         Policy
     }

@@ -16,6 +16,6 @@ namespace Parser.Entity
         public DateTime? PostedTime { get; set; }
         [StringLength(250)]
         public string SourceUrl { get; set; }
-        public string SourceUrasdl { get; set; }
+        public CountriesEnum Countries { get; set; }
     }
 }
