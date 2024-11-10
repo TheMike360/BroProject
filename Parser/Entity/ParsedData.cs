@@ -1,8 +1,10 @@
-﻿using Parser.Enums;
+﻿using Microsoft.EntityFrameworkCore;
+using Parser.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace Parser.Entity
 {
+    [Index(nameof(Time),nameof(HeaderText))]
     public class ParsedData
     {
         [Key]
