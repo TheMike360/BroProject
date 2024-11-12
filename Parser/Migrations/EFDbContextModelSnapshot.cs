@@ -43,7 +43,7 @@ namespace Parser.Migrations
 
                     b.Property<string>("HeaderText")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PostText")
                         .IsRequired()
@@ -61,6 +61,8 @@ namespace Parser.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Time", "HeaderText");
 
                     b.ToTable("ParsedDatas");
                 });

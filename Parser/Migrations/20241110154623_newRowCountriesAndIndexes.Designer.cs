@@ -12,8 +12,8 @@ using Parser.Context;
 namespace Parser.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    [Migration("20241106182012_newRowCountries")]
-    partial class newRowCountries
+    [Migration("20241110154623_newRowCountriesAndIndexes")]
+    partial class newRowCountriesAndIndexes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,7 +46,7 @@ namespace Parser.Migrations
 
                     b.Property<string>("HeaderText")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PostText")
                         .IsRequired()
@@ -64,6 +64,8 @@ namespace Parser.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Time", "HeaderText");
 
                     b.ToTable("ParsedDatas");
                 });
