@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Parser.Context;
-using Parser.Entity;
-using Parser.Enums;
+using Domain.Context;
+using Domain.Entity;
+using Domain.Enums;
 using System.Collections.ObjectModel;
 using System.Text;
 

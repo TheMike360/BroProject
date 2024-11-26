@@ -1,4 +1,4 @@
-﻿namespace Parser.Enums
+﻿namespace Domain.Enums
 {
     public enum CountriesEnum
     {

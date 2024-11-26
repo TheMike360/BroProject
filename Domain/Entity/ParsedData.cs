@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Parser.Enums;
+using Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Parser.Entity
+namespace Domain.Entity
 {
     [Index(nameof(Time),nameof(HeaderText))]
     public class ParsedData

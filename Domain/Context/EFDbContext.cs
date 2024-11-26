@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Parser.Entity;
+using Domain.Entity;
 
-namespace Parser.Context
+namespace Domain.Context
 {
     public class EFDbContext : DbContext
     {

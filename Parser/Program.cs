@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Parser.Context;
+using Domain.Context;
 using Parser.Services;
 
 var builder = WebApplication.CreateBuilder(args);
